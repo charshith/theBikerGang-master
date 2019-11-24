@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>The Biker Gang</title>
+        <link rel = "stylesheet" href = "style.css">
+        <link rel = "stylesheet" href = "login.css">
+        <link rel = "stylesheet" href = "menu.css">
+        <script src="https://www.gstatic.com/firebasejs/7.2.1/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.2.1/firebase-analytics.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.2.1/firebase-auth.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.2.1/firebase-firestore.js"></script>
+        <script src="src/params.inc.js"></script>
+        <script src="src/firebase.js"></script>
+        <script src="home.js"></script>
+        <script src="register_panel.js"></script>
+        <script src="login_panel.js"></script>
+        <script src="sliders.js"></script>
+        <script src="login_check.js"></script>
+        <script src="register_check.js"></script>
+        <script src="on_login_sucess.js"></script>
+        <meta name="viewport" content="width=device-width, initial-scale=5">
+    </head>
+    <body>
+         <div id="bars">
+                <div id="bars_animate" onclick="open_menu()">
+                    <div id="bar1"></div>
+                    <div id="bar2"></div>
+                    <div id="bar3"></div>
+                </div>
+            </div>
+        <div id="menu">
+            <h1 id="menu_heading">MENU</h1>
+            <div id="menu_links">
+                <div><h1 id="back_text2">Bicycles are Awesome</h1></div>
+                <a id="home" href="theBikerGang.html">HOME</a>
+                <a id="how_we_work">HOW WE WORK</a>
+                <a id="meet_the_team">MEET THE TEAM</a>
+            </div>
+            <div id="social_media">
+                <div id="icons">
+                    <img id="insta" src="unsplash%20walls/icons8-instagram-512.png">
+                    <img id="facebook" src="unsplash%20walls/icons8-facebook-512.png">
+                    <img id="twitter" src="unsplash%20walls/icons8-twitter-512.png">
+                </div>
+            </div>
+        </div>
+        <div id="background_image">
+            <img id="firstBg" src = "unsplash%20walls/firstBG.jpg">
+            <img id="secondBg" src = "unsplash%20walls/secondBg.jpg">
+            <img id="thirdBg" src="unsplash%20walls/thirdBg.jpg">
+        </div>
+
+        <div id="nav_bar">
+            <img id="logo" src="unsplash%20walls/logo14.jpg">
+            <div id="links">
+                <div id="login_link">
+                   <div id="animate_link">
+                        <div id="animate_link2"></div>
+                        <a href="#" onclick="login_panel()">Log In</a>
+                    </div>
+                </div>
+                 <div id="register_link">
+                   <div id="animate_link">
+                        <div id="animate_link2"></div>
+                        <a href="#" onclick="register_window()">Register</a>
+                    </div>
+                </div>
+                <div id="cart">
+                    <div id="animate_link">
+                        <div id="animate_link2"></div>
+                        <a href="cart.html">Cart</a>
+                    </div>
+                </div>
+            </div>
+            <div id="current_user">
+                <h1 id="username_heading"></h1>
+            </div>
+        </div>
+        <div id="content">
+            <h1 id="partOne">WHAT WE PROVIDE</h1>
+            <p id="info">We provide some of the best hand made Bicycles that you can enjoy your ride on.
+Wonder how we make them ? check out how our BIKES are made.</p>
+            <div id="button">
+                <div id="button_animate">
+                    <img id="back_arrow" src="unsplash%20walls/icons8-back-arrow-96.png">
+                </div>
+                <h1 id="explore_bikes"><a href="products_page.html">EXPLORE BIKES</a></h1>
+            </div>
+        </div>
+        <h1 id="hashtag">#windandspeed</h1>
+
+        <div id="sliders">
+            <div class="slider active" id="slider1" onclick="active_slider();slider1()"></div>
+            <div class="slider" id="slider2" onclick="active_slider();slider2()"></div>
+            <div class="slider" id="slider3" onclick="active_slider();slider3()"></div>
+        </div>
+        <div id="login_window">
+            <img id="login_backwall" src="unsplash%20walls/login_backwall%20(2).jpg">
+            <div onclick="close_panel()" id="exit" ><img src = "unsplash%20walls/icons8-expand-arrow-96.png"></div>
+            <div id="panel">
+                <h1 id="panel_heading">Your account, Your preferences</h1>
+                <form id="login_info" onsubmit="login_check();return false">
+                    <input placeholder="email" id="email" type="email" name="username">
+                    <input placeholder="password" id="password" type="password" name="password">
+                    <div id="submit">
+                        <div id="submit_animate"></div>
+                        <input type="submit" value="Log In" name="submit" id="submit_button">
+                    </div>
+                </form>
+                <a href="#" id="register" onclick = "register_window()">REGISTER</a>
+            </div>
+        </div>
+        <div id="register_window">
+            <div onclick="close_register_panel()" id="register_panel_exit" ><img src = "unsplash%20walls/icons8-expand-arrow-96.png"></div>
+            <div id="register_heading">
+                <h1>Please fill in the following details</h1>
+            </div>
+            <form name="register_info" id="register_info" onsubmit="register();return false">
+                <img id="register_back" src="unsplash%20walls/sign-in-2.png">
+                <input id="register_email" type="email" required placeholder="Email">
+                <input id="username" type="text" required placeholder="username">
+                <input id="register_password" type="password" required placeholder="Password">
+                <input id="confirm_password" type="password" required placeholder="Confirm Password">
+                <input id="register_submit_button" type="submit" value="Register">
+            </form>
+        </div>
+    </body>
+</html>

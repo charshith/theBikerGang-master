@@ -1,0 +1,191 @@
+#login_window{
+    position: absolute;
+    width: 40%;
+    top: 0;
+    margin-left: 28%; 
+    border: 0.5px solid white;
+    height: 90%;
+    transform: translateY(110vh);
+    border-radius: 40px;
+    opacity: 0.1;
+    display: block;
+    overflow: hidden;
+    transition: transform,opacity 1s,0.5s ease;
+    z-index: 6;
+    background: black;
+    background-size: cover;
+}
+
+#login_backwall{
+    position: absolute;
+    width: 80%;
+    left: 15%;
+    top: 51%;
+    z-index: 6;
+}
+
+#panel{
+    position: relative;
+    width: 90%;
+    height: calc(100% - 100px);
+    margin-left: auto;
+    margin-right: auto;
+    top: 100px;
+    border-radius: 100px;
+    z-index: 7;
+}
+
+#exit img{
+    position: absolute;
+    opacity: 0.5;
+    left: 49.5%;
+    width: 6%;
+    top: 5%;
+    transform: scale(1.3);
+    transition: transform,opacity 0.2s,0.5s ease-in-out;
+    z-index: 7;
+    cursor: pointer;
+}
+
+#exit img:hover{
+    opacity: 1;
+    transform: scale(1.5);
+}
+
+#panel_heading{
+    position: relative;
+    height: 20%;
+    width: 100%;
+    font-size: 40px;
+    text-align: center;
+    margin-left: auto;
+    color: white;
+    flex: 1;
+    font-family: 'Ibm Plex Sans Condensed';
+}
+
+#login_info{
+    padding: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    top: -60px;
+    flex-direction: column;
+    flex: 1;
+}
+
+#email, #password{
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 30px;
+    background: black;
+    color: white;
+    border: 2px solid white;
+    padding: 2px;
+    width: 60%;
+    opacity: 0.6;
+    display: block;
+    text-align: center;
+    font-size: 34px;
+    border-radius: 500px;
+    transition: width,opacity 0.1s,0.5s;
+}
+
+#email:hover,#password:hover{
+    width: 80%;
+    opacity: 1;
+}
+
+#email:focus, #password:focus{
+    outline: none;
+    width: 80%;
+    transform: scale(1.07);
+    opacity: 1;
+}
+
+#submit{
+    position: relative;
+    width: 30%;
+    margin-left: auto;
+    margin-right: auto;
+    overflow: hidden;
+    display: block;
+    border-radius: 1000px;
+}
+
+#submit_button{
+    height: 100%;
+    width: 100%;
+    padding: .5em 0;
+    background: black;
+    color: white;
+    font-size: 30px;
+    font-weight: 1000;
+    font-family: 'Inconsolata';
+    border-radius: 1000px;
+    transition: color,transform 1s,0.4s ease-in-out;
+}
+
+#submit_button:focus{
+    outline: none;
+    filter: blur(20);
+}
+
+#submit_button:hover{
+    background: white;
+    color: black;
+    transform: scale(1.4);
+}
+
+#register{
+    width: 100%;
+    font-size: 30px;
+    color: white;
+    font-family: 'Jockey One';
+    font-weight: 100;
+    position: relative;
+    text-decoration: none;
+    text-align: center;
+    opacity: 0.4;
+    transition: opacity,transform 0.4s,1s ease;
+    border: 2px solid white;
+    padding: 10px;
+}
+
+#register:hover{
+    opacity: 1;
+}
+
+
+@keyframes arrow{
+    from{
+        transform: rotate(270deg);
+    }
+    to{
+        transform: rotate(90deg);
+    }
+}
+
+
+@media screen and (max-width: 1300px) {
+    #register{
+        top: -60px;
+        font-size: 16px;
+    }
+    
+    #panel_heading{
+        width: 100%;
+        font-size: 36px;
+    }
+    
+    #email,#password{
+        width: 60%;
+        font-size: 20px;
+    }
+    
+    #submit_button{
+        width: 100%;
+        font-size: 16px;
+    }
+}

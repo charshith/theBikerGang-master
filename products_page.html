@@ -1,0 +1,180 @@
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="products_page.css">
+        <link rel="stylesheet" type="text/css" href="menu.css">
+        <script src="home.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.2.1/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.2.1/firebase-analytics.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.2.1/firebase-auth.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.2.1/firebase-firestore.js"></script>
+        <script src="src/params.inc.js"></script>
+        <script src="src/firebase.js"></script>
+        <script src="login_check.js"></script>
+        <script src="on_login_sucess.js"></script>
+        <script src="amazing_infos.js"></script>
+        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+        <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+       
+    </head>
+
+    <body>
+        <script>
+            AOS.init();
+            FirebaseService.on_current_userchange(function(user){
+                if(!!user){
+                   document.getElementById("user_name").innerHTML = "logged in as:"+user.displayName;
+                }
+                else{
+                    document.getElementById("user_name").innerHTML = "";
+                }
+            });
+        </script>
+        <div id="bars">
+                <div id="bars_animate" onclick="open_menu()">
+                    <div id="bar1"></div>
+                    <div id="bar2"></div>
+                    <div id="bar3"></div>
+                </div>
+            </div>
+        <img id="logo" src="unsplash%20walls/logo14.jpg">
+        <h1 id="user_name"></h1>
+        <div id="menu">
+            <h1 id="menu_heading">MENU</h1>
+            <div id="menu_links">
+                <div><h1 id="back_text2">Bicycles are Awesome</h1></div>
+                <a id="home" href="theBikerGang.html">HOME</a>
+                <a id="how_we_work">HOW WE WORK</a>
+                <a id="meet_the_team">MEET THE TEAM</a>
+            </div>
+            <div id="social_media">
+                <div id="icons">
+                    <img id="insta" src="unsplash%20walls/icons8-instagram-512.png">
+                    <img id="facebook" src="unsplash%20walls/icons8-facebook-512.png">
+                    <img id="twitter" src="unsplash%20walls/icons8-twitter-512.png">
+                </div>
+            </div>
+        </div>
+        <div id="basic_img_container" data-aos="fade-up" data-aos-duration="1200">
+            <h1 id="explore_bikes_heading" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">EXPLORE BIKES</h1>
+            <img id="basic_img" src="unsplash%20walls/products_page_back2.jpg">
+        </div>
+        <script src="products.js"></script>
+        <h1 id="trending_bikes" data-aos="fade-right" data-aos-delay="300" data-aos-duration="1000">TRENDING BIKES RIGHT NOW</h1>
+        <div id="basic_info" data-aos="fade-left" data-aos-delay="100" data-aos-duration="1000">
+            <div id="basic_info1">
+                <img id="basic_info1_image" data-aos="fade-right" data-aos-delay="600" data-aos-duration="1000" src="unsplash%20walls/basic_info1_image.png"> 
+                <div id="basic_info1_para" data-aos="fade-right" data-aos-delay="800" data-aos-duration="900">
+                    <h1>THE FELT</h1>
+                    <P>experience comfort and grip will you ride on rough,hard and rocky terrains.</P>
+                </div>
+            </div>
+            <div id="basic_info2">
+                <img id="basic_info2_image"  data-aos="fade-left" data-aos-delay="600" data-aos-duration="1000" src="unsplash%20walls/basic.png">  
+                <div id="basic_info2_para"  data-aos="fade-left" data-aos-delay="800" data-aos-duration="900">
+                    <h1>THE LIVAL</h1>
+                    <P>for a smoother road and easy riding,handling can be great on highways</P>
+                </div>
+            </div>
+        </div>
+         <div id="products_heading"><h1>MOUNTAIN BIKES</h1></div>
+        <div id="bike_products">
+            <div id="products"></div>
+        </div>
+        <div id="amazing_infos">
+            <div id="amazing_info1" data-aos="fade-right" data-aos-delay="800" data-aos-duration="1000">
+                <img id="amazing_info1_image" src="unsplash%20walls/nuroad1.jpg">
+                <div id="amazing_info1_part">
+                    <div id="amazing_info1_part_heading">
+                        <h1>Nuroad SL</h1>
+                    </div>
+                    <div id="amazing_info1_part_para">
+                        <p>Shimano GRX 1x11 gears and Mavic Allroad Disc wheels: an Alpine gravel pass-stormer</p>
+                        <div id="read_more" onclick="amazing_info_one()">
+                            <h1> READ MORE </h1>
+                        </div>
+                    </div>
+                </div>
+                <div id="read_more_overlay">
+                    <div id="read_more_overlay_images">
+                        <img id="read_more_image1" src="unsplash%20walls/read_more_overlay1.jpg">
+                        <img id="read_more_image1" src="unsplash%20walls/read_more_overlay2.jpg">
+                        <img id="read_more_image1" src="unsplash%20walls/read_more_overlay3.jpg">
+                        <img id="read_more_image1" src="unsplash%20walls/read_more_overlay4.jpg">
+                    </div>
+                    <p id="read_more_info">In the early days of Alpine road racing the roads were often little more than dirt tracks - which means that the Tour de France riders of nearly a century ago would probably have given up a limb for one of our Nuroad SLs. With the pace and comfort of our Attain road race series and the handling and ruggedness of one of our Cross Race bikes, its DNA is pure racing tradition. Featuring Shimano's new 1x11 GRX transmission with a wide-ranging 11-42 tooth cassette, our product engineers have selected a range of components that are designed for one purpose: to boost your speed. From the 40mm Kevlar tyres - wide, grippy, comfortable and light - to the hydraulic disc brakes and Mavic Allroad Disc wheelset, this is an uncompromisingly rapid gravel machine. The frame features all the benefits of our Nuroad series, including neat internal cable routing and a geometry that makes handling the variable grip of unsurfaced roads easier. We even fitted a full carbon fork, which saves weight and adds to ride comfort. Wherever you're heading this weekend, however remote or rough the road surface, the Nuroad SL has got your back. Where will it take you next?</p>
+                    <h1 id="components_heading">Components</h1>
+                    <div id="components">
+                        <table id="components_list" style="width: 50%">
+                            <tr>
+                                <td>FRAME</td>
+                                <td>HPA, High Performance Aluminium, CUBE Nuroad Disc, Carbon</td>
+                            </tr>
+                            <tr>
+                                <td>REAR DERAILLEUR</td>
+                                <td>Shimano GRX, 11-42T, 1x11</td>
+                            </tr>
+                            <tr>
+                                <td>BRAKE SYSTEM</td>
+                                <td>Shimano GRX BR-RX810</td>
+                            </tr>
+                            <tr>
+                                <td>CRANKSET</td>
+                                <td>Shimano GRX, 40T</td>
+                            </tr>
+                            <tr>
+                                <td>COLOR</td>
+                                <td>titanium´n´orange</td>
+                            </tr>
+                            <tr>
+                                <td>WHEELSET</td>
+                                <td>Mavic Allroad Disc</td>
+                            </tr>
+                            <tr>
+                                <td>WEIGHT</td>
+                                <td>9, 8 kg</td>
+                            </tr>
+                            <tr>
+                                <td>ART. NO</td>
+                                <td>123456789</td>
+                            </tr>
+                            <tr>
+                                <td>PRICE</td>
+                                <td>n/a</td>
+                            </tr>
+                        </table>
+                        <img id="geometry" src="unsplash%20walls/geometry.png">
+                    </div>
+                </div>
+            </div>
+            <div id="amazing_info2" data-aos="fade-left" data-aos-delay="800" data-aos-duration="1000">
+                <img id="amazing_info2_image" src="unsplash%20walls/grip_wall.jpg">
+                <div id="amazing_info2_part">
+                    <div id="amazing_info2_part_heading">
+                        <h1>FIRM GRIP</h1>
+                    </div>
+                    <div id="amazing_info2_part_para">
+                        <p>Explore bikes that concentrate more on the grip and handling on different terrains.</p>
+                        <div id="read_more2">
+                            <h1> READ MORE </h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="amazing_info3" data-aos="fade-down" data-aos-delay="800" data-aos-duration="1000">
+                <img id="amazing_info3_image" src="unsplash%20walls/terrains.jpg">
+                <div id="amazing_info3_part">
+                    <div id="amazing_info3_part_heading">
+                        <h1>ALL TERRAIN</h1>
+                    </div>
+                    <div id="amazing_info3_part_para">
+                        <p>Bicycles that handle well on any terrain and raod making it easier for the rider reach higher boundaries.
+                        </p>
+                        <div id="read_more3">
+                            <h1> READ MORE </h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
